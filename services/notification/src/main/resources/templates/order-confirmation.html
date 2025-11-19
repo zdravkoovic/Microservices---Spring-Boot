@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background-color: #ffffff;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .content {
+      padding: 20px;
+    }
+    .content h2 {
+      color: #333333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f1f1f1;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 15px;
+      color: #6c757d;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Thank You for Your Order!</h1>
+    </div>
+    <div class="content">
+      <p>Hello, <strong th:text="${customerName}">Customer Name</strong>,</p>
+      <p>Your order has been successfully placed. Below are your order details:</p>
+
+      <p><strong>Order Reference:</strong> <span th:text="${orderReference}">REF123</span></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="product : ${products}">
+            <td th:text="${product.name}">Product Name</td>
+            <td th:text="${product.description}">Description</td>
+            <td th:text="${product.quantity}">1</td>
+            <td th:text="${#numbers.formatDecimal(product.price, 1, 'COMMA', 2, 'POINT')}">0.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 15px; font-size: 16px;">
+        <strong>Total:</strong> 
+        <span th:text="${#numbers.formatDecimal(amount, 1, 'COMMA', 2, 'POINT')}">0.00</span>
+      </p>
+
+      <p>We’ll notify you once your order is shipped.</p>
+    </div>
+    <div class="footer">
+      <p>&copy; 2025 MyShop Inc. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>

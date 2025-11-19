@@ -1,0 +1,13 @@
+server:
+  port: 8030
+  use-forward-headers: true
+
+spring:
+  data:
+    mongodb:
+      username: johnny
+      password: johnny123
+      host: localhost
+      port: 27017
+      database: customer
+      authentication-database: admin

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background-color: #ffffff;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .header {
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .content {
+      padding: 20px;
+    }
+    .content h2 {
+      color: #333;
+    }
+    .details {
+      margin-top: 15px;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 15px;
+      color: #6c757d;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Payment Successful</h1>
+    </div>
+    <div class="content">
+      <p>Hello, <strong th:text="${customerName}">Customer Name</strong>,</p>
+      <p>We’ve received your payment for order 
+        <strong th:text="${orderReference}">REF123</strong>.
+      </p>
+
+      <div class="details">
+        <p><strong>Amount Paid:</strong> 
+          <span th:text="${#numbers.formatDecimal(amount, 1, 'COMMA', 2, 'POINT')}">0.00</span>
+        </p>
+        <p><strong>Date:</strong> <span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy')}">Today</span></p>
+      </div>
+
+      <p>Thank you for shopping with us!</p>
+    </div>
+    <div class="footer">
+      <p>&copy; 2025 MyShop Inc. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>

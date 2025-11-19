@@ -1,0 +1,110 @@
+# -------------------------
+# Java / build artifacts
+# -------------------------
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# Maven (multi-module)
+**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+release.properties
+buildNumber.properties
+.mvn/timing.properties
+
+# Keep Maven wrapper if present
+!mvnw
+!mvnw.cmd
+!/.mvn/wrapper/maven-wrapper.jar
+
+# -------------------------
+# IDEs
+# -------------------------
+# VS Code
+.vscode/
+# If you want to keep specific workspace files (shared config), uncomment a line like:
+# !.vscode/extensions.json
+# !.vscode/settings.json
+# !.vscode/launch.json
+
+# IntelliJ IDEA (in case someone uses it too)
+.idea/
+/*.iml
+.idea_modules/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# -------------------------
+# Logs, temp, runtime
+# -------------------------
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# Test / coverage
+**/target/surefire-reports/
+**/target/failsafe-reports/
+jacoco.exec
+coverage/
+
+# -------------------------
+# DB / tool configs
+# -------------------------
+.dbeaver/
+.dbeaver-data-sources.xml
+
+# -------------------------
+# Secrets / env / local config
+# -------------------------
+.env
+.env.* 
+
+# Local Spring Boot overrides (adjust if you use different suffix)
+**/src/main/resources/application-local.properties
+**/src/main/resources/application-local.yml
+**/src/main/resources/application-*.local.properties
+**/src/main/resources/application-*.local.yml
+
+# Keystores, credentials
+*.jks
+*.keystore
+*.p12
+*.pem
+secrets.*
+credentials.*
+
+# -------------------------
+# Docker / containers
+# -------------------------
+docker-compose.override.yml
+docker-compose.local.yml
+/.docker
+**/docker-compose.override.yml
+
+# -------------------------
+# Other generated files
+# -------------------------
+/out/
+/generated/
+*.bak
+*~
+
+nginx/
+Beleške.txt
